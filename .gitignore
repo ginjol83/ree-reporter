@@ -25,6 +25,8 @@ yarn-error.log*
 /src/config/production.js
 /src/config/test.js
 /src/config/development.js
+/src/config/mail-config.js
+/src/config/firebase-credentials.js
 
 # Editor directories and files
 .idea

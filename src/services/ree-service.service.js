@@ -37,12 +37,11 @@ const getMercadoManana = () => axios.get(mercadoMananaURL,{})
 const getMercadoPreciosRegulacionSecundaria = () => axios.get(mercadoPreciosRegulacionSecundariaURL,{})
 
 const getMarketByDate = (date) => { 
-    const dateMoment = moment(date)
-    const url="https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date="+
-    dateMoment.year()+"-"+dateMoment.month()+"-"+(dateMoment.date())+"T00:00&end_date="+dateMoment.year()+"-"+dateMoment.month()+"-"+(dateMoment.date())+"T23:59&time_trunc=hour"
-    return axios.get(url,{}) 
-  }
+  const dateMoment = moment(date)
+  const url="https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date="+
+  dateMoment.year()+"-"+dateMoment.month()+"-"+(dateMoment.date())+"T00:00&end_date="+dateMoment.year()+"-"+dateMoment.month()+"-"+(dateMoment.date())+"T23:59&time_trunc=hour"
 
-
+  return axios.get(url,{})
+}
 
 export { getBalance, getIreIndex, getMercadoAhora, getMercadoPreciosRegulacionSecundaria, getMarketByDate, getMercadoManana }

@@ -1,4 +1,5 @@
 import Excel from 'exceljs';
+import { mailConfig } from '../config/mail-config.js';
 
 const marketNow = () => {
     
@@ -112,9 +113,8 @@ const writeXLS = async (jsonMarketNow, jsonBalance) => {
         color: { argb: '1F4E78' }
     };
     
-
     // Guarda el archivo
-    await workbook.xlsx.writeFile('DatosMercado.xlsx');
+    await workbook.xlsx.writeFile(`output/${mailConfig.fileName}`);
     console.log('Archivo Excel generado con éxito.');
 };
 
