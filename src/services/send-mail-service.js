@@ -13,7 +13,7 @@ const mailList = snapshot.docs.map(doc => doc.data());
 
 const fechaActual = new Date().toLocaleDateString();
 
-const sendMail = () => mailList.map(res =>{
+const sendMailFree = () => mailList.map(res =>{
     console.log(`sending mail to ${res.mail}`)
     const mailOptions = {
         from: mailConfig.mail, 
@@ -32,4 +32,4 @@ const sendMail = () => mailList.map(res =>{
     transporter.sendMail(mailOptions,{})
 })
 
-export { sendMail }
+export { sendMailFree }
